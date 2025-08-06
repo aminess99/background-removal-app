@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /set_language/
+Disallow: /uploads/
+Disallow: /outputs/
+Disallow: /static/
+
+Sitemap: http://localhost:5000/sitemap.xml
+
+# Allow search engines to index all language versions
+User-agent: Googlebot
+Allow: /
+Allow: /set_language/
+
+User-agent: Bingbot
+Allow: /
+Allow: /set_language/
+
+User-agent: Slurp
+Allow: /
+Allow: /set_language/

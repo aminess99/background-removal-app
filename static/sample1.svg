@@ -1,0 +1,6 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#f0f0f0"/>
+  <circle cx="150" cy="120" r="40" fill="#d0d0d0"/>
+  <path d="M110 180 Q150 160 190 180 L190 220 Q150 200 110 220 Z" fill="#d0d0d0"/>
+  <text x="150" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">صورة شخصية</text>
+</svg>

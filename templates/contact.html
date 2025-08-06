@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - فصل خلفية الصور</title>
+    <meta name="description" content="تواصل معنا للحصول على الدعم أو الاستفسارات حول أداة فصل خلفية الصور">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* شريط التنقل */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .contact-form {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e0e6ff;
+        }
+        
+        .contact-info {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e6ff;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-left: 15px;
+            color: #667eea;
+        }
+        
+        .contact-details h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .contact-details p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            background: #f8f9ff;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #5a6fd8;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* الذيل */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 60px;
+            padding: 40px 0 20px;
+            color: #333;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>🎨 فصل خلفية الصور</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">الرئيسية</a></li>
+                    <li><a href="/about" class="nav-link">حول</a></li>
+                    <li><a href="/contact" class="nav-link active">اتصل بنا</a></li>
+                    <li><a href="/privacy" class="nav-link">الخصوصية</a></li>
+                    <li><a href="/terms" class="nav-link">الشروط</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="main-content">
+            <h1>📞 اتصل بنا</h1>
+            
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">نحن هنا لمساعدتك! لا تتردد في التواصل معنا لأي استفسارات أو اقتراحات</p>
+            
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h2>📝 أرسل لنا رسالة</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">نوع الاستفسار</label>
+                            <select id="subject" name="subject">
+                                <option value="support">دعم فني</option>
+                                <option value="suggestion">اقتراح</option>
+                                <option value="bug">بلاغ عن خطأ</option>
+                                <option value="business">استفسار تجاري</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>📍 معلومات التواصل</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>support@backgroundremoval.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h3>ساعات العمل</h3>
+                            <p>24/7 - خدمة متاحة على مدار الساعة</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <h3>الموقع الإلكتروني</h3>
+                            <p>www.backgroundremoval.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h3>الدعم الفوري</h3>
+                            <p>متاح عبر نموذج الاتصال</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h2>❓ الأسئلة الشائعة</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">هل الخدمة مجانية حقاً؟</div>
+                    <div class="faq-answer">
+                        <p>نعم، خدمتنا مجانية بالكامل. يمكنك استخدام أداة فصل الخلفية دون أي رسوم أو قيود.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">ما هي أنواع الملفات المدعومة؟</div>
+                    <div class="faq-answer">
+                        <p>ندعم جميع صيغ الصور الشائعة: PNG, JPG, JPEG, GIF, BMP, WEBP بحد أقصى 16 ميجابايت.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">هل تحتفظون بصوري؟</div>
+                    <div class="faq-answer">
+                        <p>لا، نحن نحترم خصوصيتك. يتم حذف جميع الصور تلقائياً بعد المعالجة ولا نحتفظ بأي نسخ.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">كم من الوقت تستغرق المعالجة؟</div>
+                    <div class="faq-answer">
+                        <p>عادة ما تستغرق المعالجة بين 5-30 ثانية حسب حجم الصورة وتعقيدها.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">ماذا لو لم تعجبني النتيجة؟</div>
+                    <div class="faq-answer">
+                        <p>يمكنك تجربة صورة أخرى أو التواصل معنا لتحسين الخدمة. نحن نعمل باستمرار على تطوير خوارزمياتنا.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎨 فصل خلفية الصور</h3>
+                    <p>أداة مجانية لفصل وإزالة خلفية الصور باستخدام الذكاء الاصطناعي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="/about">حول الموقع</a></li>
+                        <li><a href="/contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>القوانين</h4>
+                    <ul>
+                        <li><a href="/privacy">سياسة الخصوصية</a></li>
+                        <li><a href="/terms">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 فصل خلفية الصور. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // تفعيل قائمة التنقل المحمولة
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+        
+        // تفعيل الأسئلة الشائعة
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // إغلاق جميع الإجابات
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
+            });
+            
+            // فتح الإجابة المحددة إذا لم تكن مفتوحة
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+        
+        // معالجة نموذج الاتصال
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // جمع بيانات النموذج
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // عرض رسالة نجاح
+            alert('شكراً لك! تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.');
+            
+            // إعادة تعيين النموذج
+            this.reset();
+        });
+    </script>
+</body>
+</html>

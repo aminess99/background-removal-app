@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشروط والأحكام - فصل خلفية الصور</title>
+    <meta name="description" content="الشروط والأحكام لاستخدام موقع فصل خلفية الصور">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* شريط التنقل */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #555;
+            font-size: 1.4rem;
+            margin: 25px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-right: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .highlight-box {
+            background: #f8f9ff;
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .date-updated {
+            background: #e8f2ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .contact-info {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-right: 5px solid #667eea;
+        }
+        
+        .contact-info h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .section-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        /* الذيل */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 60px;
+            padding: 40px 0 20px;
+            color: #333;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>🎨 فصل خلفية الصور</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">الرئيسية</a></li>
+                    <li><a href="/about" class="nav-link">حول</a></li>
+                    <li><a href="/contact" class="nav-link">اتصل بنا</a></li>
+                    <li><a href="/privacy" class="nav-link">الخصوصية</a></li>
+                    <li><a href="/terms" class="nav-link active">الشروط</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="main-content">
+            <h1>📋 الشروط والأحكام</h1>
+            
+            <div class="date-updated">
+                📅 آخر تحديث: ديسمبر 2024
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🤝 مرحباً بك</h3>
+                <p>مرحباً بك في موقع "فصل خلفية الصور". باستخدامك لهذا الموقع، فإنك توافق على الالتزام بهذه الشروط والأحكام. يرجى قراءتها بعناية قبل استخدام خدماتنا.</p>
+            </div>
+            
+            <h2><span class="section-number">1</span>تعريفات</h2>
+            
+            <ul>
+                <li><strong>"الموقع":</strong> موقع فصل خلفية الصور وجميع صفحاته وخدماته</li>
+                <li><strong>"الخدمة":</strong> أداة إزالة وفصل خلفية الصور باستخدام الذكاء الاصطناعي</li>
+                <li><strong>"المستخدم":</strong> أي شخص يستخدم الموقع أو الخدمة</li>
+                <li><strong>"المحتوى":</strong> الصور والنصوص والبيانات المرفوعة أو المعروضة</li>
+                <li><strong>"نحن/الشركة":</strong> مشغلو موقع فصل خلفية الصور</li>
+            </ul>
+            
+            <h2><span class="section-number">2</span>قبول الشروط</h2>
+            
+            <p>باستخدام هذا الموقع، فإنك:</p>
+            
+            <ul>
+                <li>توافق على جميع الشروط والأحكام المذكورة هنا</li>
+                <li>تؤكد أنك تبلغ من العمر 18 عاماً أو أكثر</li>
+                <li>تتعهد باستخدام الخدمة بطريقة قانونية ومسؤولة</li>
+                <li>تقر بأنك قرأت وفهمت سياسة الخصوصية</li>
+            </ul>
+            
+            <h2><span class="section-number">3</span>وصف الخدمة</h2>
+            
+            <h3>ما نقدمه</h3>
+            <ul>
+                <li>أداة مجانية لإزالة خلفية الصور</li>
+                <li>معالجة تلقائية باستخدام الذكاء الاصطناعي</li>
+                <li>دعم لصيغ متعددة من الصور</li>
+                <li>واجهة سهلة الاستخدام</li>
+            </ul>
+            
+            <h3>ما لا نضمنه</h3>
+            <ul>
+                <li>دقة 100% في جميع الصور</li>
+                <li>توفر الخدمة بشكل مستمر دون انقطاع</li>
+                <li>ملاءمة النتائج لجميع الاستخدامات</li>
+            </ul>
+            
+            <h2><span class="section-number">4</span>الاستخدام المقبول</h2>
+            
+            <div class="highlight-box">
+                <h3>✅ يُسمح لك بـ:</h3>
+                <ul>
+                    <li>استخدام الخدمة للأغراض الشخصية والتجارية</li>
+                    <li>رفع صورك الخاصة أو الصور التي تملك حقوقها</li>
+                    <li>تحميل ومشاركة النتائج</li>
+                    <li>استخدام الصور المعالجة في مشاريعك</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h3>❌ يُمنع عليك:</h3>
+                <ul>
+                    <li>رفع صور تحتوي على محتوى غير قانوني أو مسيء</li>
+                    <li>انتهاك حقوق الطبع والنشر للآخرين</li>
+                    <li>استخدام الخدمة لأغراض ضارة أو احتيالية</li>
+                    <li>محاولة اختراق أو إلحاق الضرر بالموقع</li>
+                    <li>رفع صور تحتوي على فيروسات أو برمجيات خبيثة</li>
+                    <li>استخدام أدوات آلية لإرسال طلبات مفرطة</li>
+                </ul>
+            </div>
+            
+            <h2><span class="section-number">5</span>حقوق الملكية الفكرية</h2>
+            
+            <h3>حقوقك</h3>
+            <ul>
+                <li>تحتفظ بجميع حقوق الصور التي ترفعها</li>
+                <li>تملك النتائج المعالجة بالكامل</li>
+                <li>يمكنك استخدام النتائج دون قيود</li>
+            </ul>
+            
+            <h3>حقوقنا</h3>
+            <ul>
+                <li>نملك حقوق الموقع والتقنية المستخدمة</li>
+                <li>نحتفظ بحق تطوير وتحسين الخدمة</li>
+                <li>لا نطالب بأي حقوق في صورك أو نتائجك</li>
+            </ul>
+            
+            <h2><span class="section-number">6</span>الخصوصية وحماية البيانات</h2>
+            
+            <p>نلتزم بحماية خصوصيتك وفقاً لسياسة الخصوصية الخاصة بنا:</p>
+            
+            <ul>
+                <li>لا نحتفظ بصورك بعد المعالجة</li>
+                <li>لا نشارك بياناتك مع أطراف ثالثة</li>
+                <li>نستخدم تشفير SSL لحماية البيانات</li>
+                <li>يتم حذف جميع الصور تلقائياً خلال 24 ساعة</li>
+            </ul>
+            
+            <h2><span class="section-number">7</span>إخلاء المسؤولية</h2>
+            
+            <div class="warning-box">
+                <h3>⚠️ تنبيه مهم</h3>
+                <p>الخدمة متوفرة "كما هي" دون أي ضمانات. نحن غير مسؤولين عن:</p>
+                <ul>
+                    <li>دقة أو جودة النتائج</li>
+                    <li>أي أضرار مباشرة أو غير مباشرة</li>
+                    <li>فقدان البيانات أو الصور</li>
+                    <li>انقطاع الخدمة أو الأخطاء التقنية</li>
+                    <li>استخدامك للنتائج في مشاريعك</li>
+                </ul>
+            </div>
+            
+            <h2><span class="section-number">8</span>حدود المسؤولية</h2>
+            
+            <p>في جميع الأحوال، لن تتجاوز مسؤوليتنا تجاهك:</p>
+            
+            <ul>
+                <li>المبلغ الذي دفعته لنا (إن وجد)</li>
+                <li>100 دولار أمريكي كحد أقصى</li>
+                <li>لا نتحمل مسؤولية الأضرار التبعية</li>
+            </ul>
+            
+            <h2><span class="section-number">9</span>إنهاء الخدمة</h2>
+            
+            <h3>حقك في الإنهاء</h3>
+            <p>يمكنك التوقف عن استخدام الخدمة في أي وقت دون إشعار مسبق.</p>
+            
+            <h3>حقنا في الإنهاء</h3>
+            <p>نحتفظ بالحق في:</p>
+            <ul>
+                <li>إيقاف أو تقييد وصولك للخدمة</li>
+                <li>حذف المحتوى المخالف</li>
+                <li>إنهاء الخدمة كلياً أو جزئياً</li>
+                <li>تعديل شروط الاستخدام</li>
+            </ul>
+            
+            <h2><span class="section-number">10</span>التعديلات</h2>
+            
+            <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سنقوم بـ:</p>
+            
+            <ul>
+                <li>نشر النسخة المحدثة على الموقع</li>
+                <li>تحديث تاريخ "آخر تحديث"</li>
+                <li>إشعارك بالتغييرات المهمة (إن أمكن)</li>
+            </ul>
+            
+            <p>استمرارك في استخدام الخدمة يعني موافقتك على الشروط المحدثة.</p>
+            
+            <h2><span class="section-number">11</span>القانون المطبق</h2>
+            
+            <ul>
+                <li>تخضع هذه الشروط للقوانين المحلية والدولية</li>
+                <li>أي نزاعات ستحل بالطرق الودية أولاً</li>
+                <li>المحاكم المختصة هي المرجع النهائي</li>
+            </ul>
+            
+            <h2><span class="section-number">12</span>أحكام عامة</h2>
+            
+            <h3>الفصل</h3>
+            <p>إذا كان أي جزء من هذه الشروط غير قانوني، فإن باقي الشروط تبقى سارية.</p>
+            
+            <h3>التنازل</h3>
+            <p>عدم إنفاذنا لأي شرط لا يعني التنازل عن حقوقنا.</p>
+            
+            <h3>التفسير</h3>
+            <p>في حالة التضارب، النسخة العربية من هذه الشروط هي المرجع.</p>
+            
+            <h2><span class="section-number">13</span>معلومات إضافية</h2>
+            
+            <h3>الأمان</h3>
+            <ul>
+                <li>نستخدم أحدث تقنيات الأمان</li>
+                <li>نراقب الموقع للحماية من التهديدات</li>
+                <li>نحدث أنظمتنا بانتظام</li>
+            </ul>
+            
+            <h3>الدعم</h3>
+            <ul>
+                <li>نقدم الدعم عبر صفحة "اتصل بنا"</li>
+                <li>نسعى للرد خلال 24-48 ساعة</li>
+                <li>الدعم متوفر باللغة العربية والإنجليزية</li>
+            </ul>
+            
+            <div class="contact-info">
+                <h3>📞 تواصل معنا</h3>
+                <p>إذا كان لديك أي أسئلة حول هذه الشروط والأحكام، يرجى التواصل معنا:</p>
+                <ul>
+                    <li><strong>البريد الإلكتروني:</strong> legal@backgroundremoval.com</li>
+                    <li><strong>صفحة الاتصال:</strong> <a href="/contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🙏 شكراً لك</h3>
+                <p>نشكرك على استخدام خدمتنا والالتزام بهذه الشروط. نحن نعمل باستمرار لتقديم أفضل تجربة ممكنة لك.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎨 فصل خلفية الصور</h3>
+                    <p>أداة مجانية لفصل وإزالة خلفية الصور باستخدام الذكاء الاصطناعي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="/about">حول الموقع</a></li>
+                        <li><a href="/contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>القوانين</h4>
+                    <ul>
+                        <li><a href="/privacy">سياسة الخصوصية</a></li>
+                        <li><a href="/terms">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 فصل خلفية الصور. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // تفعيل قائمة التنقل المحمولة
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

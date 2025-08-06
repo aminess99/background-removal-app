@@ -1,0 +1,9 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#f5f5f5"/>
+  <ellipse cx="150" cy="120" rx="35" ry="45" fill="#e0e0e0"/>
+  <path d="M120 170 Q150 150 180 170 L180 210 Q150 190 120 210 Z" fill="#e0e0e0"/>
+  <circle cx="135" cy="110" r="3" fill="#999"/>
+  <circle cx="165" cy="110" r="3" fill="#999"/>
+  <path d="M140 125 Q150 130 160 125" stroke="#999" stroke-width="2" fill="none"/>
+  <text x="150" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">امرأة</text>
+</svg>

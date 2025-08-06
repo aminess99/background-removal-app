@@ -1,0 +1,12 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#f8f8f8"/>
+  <ellipse cx="150" cy="160" rx="60" ry="40" fill="#ddd"/>
+  <circle cx="150" cy="120" r="35" fill="#ddd"/>
+  <polygon points="120,100 130,80 140,100" fill="#ddd"/>
+  <polygon points="160,100 170,80 180,100" fill="#ddd"/>
+  <circle cx="140" cy="115" r="2" fill="#333"/>
+  <circle cx="160" cy="115" r="2" fill="#333"/>
+  <path d="M145 125 L155 125 M150 125 L150 135" stroke="#333" stroke-width="2"/>
+  <path d="M130 140 Q150 150 170 140" stroke="#333" stroke-width="2" fill="none"/>
+  <text x="150" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">قطة</text>
+</svg>

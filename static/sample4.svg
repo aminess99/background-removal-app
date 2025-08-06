@@ -1,0 +1,13 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#f6f6f6"/>
+  <ellipse cx="150" cy="170" rx="70" ry="50" fill="#e5e5e5"/>
+  <ellipse cx="150" cy="120" rx="40" ry="35" fill="#e5e5e5"/>
+  <ellipse cx="120" cy="105" rx="15" ry="25" fill="#e5e5e5"/>
+  <ellipse cx="180" cy="105" rx="15" ry="25" fill="#e5e5e5"/>
+  <circle cx="140" cy="115" r="3" fill="#333"/>
+  <circle cx="160" cy="115" r="3" fill="#333"/>
+  <ellipse cx="150" cy="125" rx="4" ry="6" fill="#333"/>
+  <path d="M140 135 Q150 145 160 135" stroke="#333" stroke-width="2" fill="none"/>
+  <ellipse cx="150" cy="200" rx="8" ry="20" fill="#e5e5e5"/>
+  <text x="150" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">كلب</text>
+</svg>

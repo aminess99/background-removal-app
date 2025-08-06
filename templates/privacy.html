@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - فصل خلفية الصور</title>
+    <meta name="description" content="سياسة الخصوصية وحماية البيانات لموقع فصل خلفية الصور">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* شريط التنقل */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #555;
+            font-size: 1.4rem;
+            margin: 25px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-right: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .highlight-box {
+            background: #f8f9ff;
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .date-updated {
+            background: #e8f2ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .contact-info {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-right: 5px solid #667eea;
+        }
+        
+        .contact-info h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        /* الذيل */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 60px;
+            padding: 40px 0 20px;
+            color: #333;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>🎨 فصل خلفية الصور</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">الرئيسية</a></li>
+                    <li><a href="/about" class="nav-link">حول</a></li>
+                    <li><a href="/contact" class="nav-link">اتصل بنا</a></li>
+                    <li><a href="/privacy" class="nav-link active">الخصوصية</a></li>
+                    <li><a href="/terms" class="nav-link">الشروط</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="main-content">
+            <h1>🔒 سياسة الخصوصية</h1>
+            
+            <div class="date-updated">
+                📅 آخر تحديث: ديسمبر 2024
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🛡️ التزامنا بخصوصيتك</h3>
+                <p>نحن في موقع "فصل خلفية الصور" نقدر خصوصيتك ونلتزم بحماية معلوماتك الشخصية. هذه السياسة توضح كيفية جمع واستخدام وحماية بياناتك.</p>
+            </div>
+            
+            <h2>📊 المعلومات التي نجمعها</h2>
+            
+            <h3>المعلومات المجمعة تلقائياً</h3>
+            <ul>
+                <li>عنوان IP الخاص بك</li>
+                <li>نوع المتصفح ونظام التشغيل</li>
+                <li>تاريخ ووقت الزيارة</li>
+                <li>الصفحات التي تمت زيارتها</li>
+                <li>مصدر الإحالة (الموقع الذي أتيت منه)</li>
+            </ul>
+            
+            <h3>المعلومات التي تقدمها طوعاً</h3>
+            <ul>
+                <li>الصور التي ترفعها للمعالجة</li>
+                <li>معلومات الاتصال (عند التواصل معنا)</li>
+                <li>التعليقات والاقتراحات</li>
+            </ul>
+            
+            <h2>🎯 كيف نستخدم معلوماتك</h2>
+            
+            <p>نستخدم المعلومات المجمعة للأغراض التالية:</p>
+            
+            <ul>
+                <li><strong>تقديم الخدمة:</strong> معالجة الصور وإزالة الخلفيات</li>
+                <li><strong>تحسين الخدمة:</strong> تطوير وتحسين خوارزميات المعالجة</li>
+                <li><strong>الدعم الفني:</strong> الرد على استفساراتك ومساعدتك</li>
+                <li><strong>الأمان:</strong> حماية الموقع من الاستخدام المسيء</li>
+                <li><strong>التحليلات:</strong> فهم كيفية استخدام الموقع لتحسينه</li>
+            </ul>
+            
+            <h2>🖼️ معالجة الصور</h2>
+            
+            <div class="highlight-box">
+                <h3>🔄 دورة حياة صورك</h3>
+                <ul>
+                    <li><strong>الرفع:</strong> يتم رفع صورتك مؤقتاً لخوادمنا الآمنة</li>
+                    <li><strong>المعالجة:</strong> تتم معالجة الصورة باستخدام الذكاء الاصطناعي</li>
+                    <li><strong>التسليم:</strong> يتم إرسال النتيجة إليك</li>
+                    <li><strong>الحذف:</strong> يتم حذف جميع الصور تلقائياً خلال 24 ساعة</li>
+                </ul>
+            </div>
+            
+            <p><strong>ضمان مهم:</strong> نحن لا نحتفظ بصورك أو نشاركها مع أي طرف ثالث. جميع الصور يتم حذفها نهائياً بعد المعالجة.</p>
+            
+            <h2>🍪 ملفات تعريف الارتباط (Cookies)</h2>
+            
+            <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك:</p>
+            
+            <ul>
+                <li><strong>ملفات أساسية:</strong> ضرورية لعمل الموقع</li>
+                <li><strong>ملفات التحليلات:</strong> لفهم استخدام الموقع</li>
+                <li><strong>ملفات التفضيلات:</strong> لحفظ إعداداتك</li>
+            </ul>
+            
+            <p>يمكنك إدارة ملفات تعريف الارتباط من إعدادات متصفحك.</p>
+            
+            <h2>🔐 أمان البيانات</h2>
+            
+            <p>نتخذ إجراءات أمنية صارمة لحماية بياناتك:</p>
+            
+            <ul>
+                <li>تشفير SSL/TLS لجميع البيانات المنقولة</li>
+                <li>خوادم آمنة ومحمية</li>
+                <li>مراقبة مستمرة للأنشطة المشبوهة</li>
+                <li>نسخ احتياطية آمنة</li>
+                <li>وصول محدود للموظفين المخولين فقط</li>
+            </ul>
+            
+            <h2>🌍 مشاركة المعلومات</h2>
+            
+            <p>نحن لا نبيع أو نؤجر أو نشارك معلوماتك الشخصية مع أطراف ثالثة، باستثناء:</p>
+            
+            <ul>
+                <li><strong>مقدمي الخدمات:</strong> شركات الاستضافة والدعم الفني (مع اتفاقيات سرية)</li>
+                <li><strong>المتطلبات القانونية:</strong> عند الطلب من السلطات المختصة</li>
+                <li><strong>حماية الحقوق:</strong> لحماية حقوقنا أو حقوق المستخدمين الآخرين</li>
+            </ul>
+            
+            <h2>👤 حقوقك</h2>
+            
+            <p>لديك الحقوق التالية فيما يتعلق ببياناتك:</p>
+            
+            <ul>
+                <li><strong>الوصول:</strong> طلب نسخة من بياناتك</li>
+                <li><strong>التصحيح:</strong> تصحيح البيانات غير الصحيحة</li>
+                <li><strong>الحذف:</strong> طلب حذف بياناتك</li>
+                <li><strong>التقييد:</strong> تقييد معالجة بياناتك</li>
+                <li><strong>النقل:</strong> نقل بياناتك لخدمة أخرى</li>
+                <li><strong>الاعتراض:</strong> الاعتراض على معالجة بياناتك</li>
+            </ul>
+            
+            <h2>👶 حماية الأطفال</h2>
+            
+            <p>خدمتنا غير مخصصة للأطفال دون سن 13 عاماً. نحن لا نجمع عمداً معلومات شخصية من الأطفال. إذا علمنا أننا جمعنا معلومات من طفل، سنحذفها فوراً.</p>
+            
+            <h2>🔄 تحديثات السياسة</h2>
+            
+            <p>قد نحدث هذه السياسة من وقت لآخر. سنخطرك بأي تغييرات مهمة عبر:</p>
+            
+            <ul>
+                <li>إشعار على الموقع</li>
+                <li>البريد الإلكتروني (إذا كان متوفراً)</li>
+                <li>تحديث تاريخ "آخر تحديث" أعلى هذه الصفحة</li>
+            </ul>
+            
+            <h2>🌐 النقل الدولي للبيانات</h2>
+            
+            <p>قد يتم نقل بياناتك ومعالجتها في دول أخرى. نضمن أن أي نقل للبيانات يتم وفقاً للمعايير الدولية لحماية البيانات.</p>
+            
+            <h2>⚖️ الأساس القانوني</h2>
+            
+            <p>نعالج بياناتك بناءً على:</p>
+            
+            <ul>
+                <li><strong>الموافقة:</strong> موافقتك على استخدام الخدمة</li>
+                <li><strong>المصلحة المشروعة:</strong> تحسين خدماتنا</li>
+                <li><strong>الالتزام القانوني:</strong> الامتثال للقوانين</li>
+            </ul>
+            
+            <div class="contact-info">
+                <h3>📞 تواصل معنا</h3>
+                <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية أو ترغب في ممارسة حقوقك، يرجى التواصل معنا:</p>
+                <ul>
+                    <li><strong>البريد الإلكتروني:</strong> privacy@backgroundremoval.com</li>
+                    <li><strong>صفحة الاتصال:</strong> <a href="/contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>✅ التزامنا</h3>
+                <p>نحن ملتزمون بحماية خصوصيتك وضمان أمان بياناتك. هذه السياسة تعكس التزامنا بالشفافية والمسؤولية في التعامل مع معلوماتك.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎨 فصل خلفية الصور</h3>
+                    <p>أداة مجانية لفصل وإزالة خلفية الصور باستخدام الذكاء الاصطناعي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="/about">حول الموقع</a></li>
+                        <li><a href="/contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>القوانين</h4>
+                    <ul>
+                        <li><a href="/privacy">سياسة الخصوصية</a></li>
+                        <li><a href="/terms">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 فصل خلفية الصور. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // تفعيل قائمة التنقل المحمولة
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
