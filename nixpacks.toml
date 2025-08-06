@@ -1,7 +1,7 @@
 # nixpacks.toml
 
 [phases.setup]
-apt = ["libgl1-mesa-glx", "libglib2.0-0"]
+apt = ["libgl1", "libglib2.0-0", "libsm6", "libxext6", "ffmpeg"]
 
 [start]
 cmd = "gunicorn app:app"
