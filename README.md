@@ -117,9 +117,10 @@ removal/
 ├── requirements.txt          # متطلبات Python
 ├── Procfile                  # إعدادات Heroku
 ├── render.yaml              # إعدادات Render
-├── vercel.json              # إعدادات Vercel
-├── runtime.txt              # إصدار Python
-├── .gitignore               # ملفات Git المتجاهلة
+├── vercel.json              # إعدادات Vercel```
+├── runtime.txt              # إصدار Python (لـ Heroku)
+├── .python-version          # إصدار Python (لـ Render)
+```├── .gitignore               # ملفات Git المتجاهلة
 ├── DEPLOYMENT_GUIDE.md      # دليل النشر الشامل
 ├── static/                  # الملفات الثابتة
 │   ├── *.svg               # صور نموذجية
@@ -142,7 +143,8 @@ removal/
 - **Procfile:** لـ Heroku
 - **render.yaml:** لـ Render
 - **vercel.json:** لـ Vercel
-- **runtime.txt:** تحديد إصدار Python
+- **runtime.txt:** تحديد إصدار Python (لـ Heroku)
+- **.python-version:** تحديد إصدار Python (لـ Render)
 - **.gitignore:** حماية الملفات الحساسة
 - **DEPLOYMENT_GUIDE.md:** دليل شامل للنشر
 
